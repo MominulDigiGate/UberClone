@@ -24,7 +24,8 @@ extension LocationManager: CLLocationManagerDelegate
 {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard !locations.isEmpty else {return}
-        locationManager.startUpdatingLocation()
+        print(locations.first)
+        locationManager.stopUpdatingLocation()
     }
     
 }
