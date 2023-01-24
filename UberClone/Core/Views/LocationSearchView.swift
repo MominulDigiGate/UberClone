@@ -23,7 +23,7 @@ struct LocationSearchView: View {
                         .foregroundColor(Color(.systemGray2))
                     
                     Rectangle()
-                        .frame(width: 2, height: 50)
+                        .frame(width: 2, height: 35)
                         .foregroundColor(Color(.systemGray2))
                     
                     Rectangle()
@@ -48,10 +48,11 @@ struct LocationSearchView: View {
                         .padding(.trailing)
                 }
             }
+            .padding(.top,70)
             .padding(.horizontal)
             
             Divider()
-                .padding(.vertical)
+                .padding(.top)
             
 
             //list view

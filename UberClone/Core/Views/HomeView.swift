@@ -20,15 +20,17 @@ struct HomeView: View {
                 LocationSearchView()
             }else {
                 LocationSearchActionView()
-                    .padding(.top, 72)
+                    .padding(.top, 60)
                     .onTapGesture {
-                        showLocationSearchView.toggle()
+                        withAnimation(.spring()){
+                            showLocationSearchView.toggle()
+                        }
                     }
             }
             
-            NavigationMenuIconView()
-                .padding(.leading, 20)
-                .padding(.top, 15)
+            NavigationMenuIconView(showLocationSearchView: $showLocationSearchView)
+                .padding(.leading)
+                .padding(.top, 4)
         }
     }
 }

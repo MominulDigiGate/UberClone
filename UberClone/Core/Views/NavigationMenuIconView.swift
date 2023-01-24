@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct NavigationMenuIconView: View {
+    @Binding var showLocationSearchView : Bool
+    
     var body: some View {
         Button{
-            
+            if showLocationSearchView{
+                withAnimation(.spring()){
+                    showLocationSearchView.toggle()
+                }
+            }
         } label: {
-            Image(systemName: "line.3.horizontal")
+            Image(systemName: showLocationSearchView ? "arrow.left" : "line.3.horizontal")
                 .font(.title2)
                 .foregroundColor(.black)
                 .padding()
@@ -26,6 +32,6 @@ struct NavigationMenuIconView: View {
 
 struct NavigationMenuIconView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationMenuIconView()
+        NavigationMenuIconView(showLocationSearchView: .constant(true))
     }
 }
