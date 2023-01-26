@@ -17,9 +17,9 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             if showLocationSearchView{
-                LocationSearchView()
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
             }else {
-                LocationSearchActionView()
+                ItemLocationSearchActionHome()
                     .padding(.top, 60)
                     .onTapGesture {
                         withAnimation(.spring()){
@@ -28,7 +28,7 @@ struct HomeView: View {
                     }
             }
             
-            NavigationMenuIconView(showLocationSearchView: $showLocationSearchView)
+            ItemMenuIcon(showLocationSearchView: $showLocationSearchView)
                 .padding(.leading)
                 .padding(.top, 4)
         }
@@ -40,3 +40,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

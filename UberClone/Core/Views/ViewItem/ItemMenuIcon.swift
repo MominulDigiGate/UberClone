@@ -1,5 +1,5 @@
 //
-//  NavigationMenuIconView.swift
+//  ItemMenuIcon.swift
 //  UberClone
 //
 //  Created by Mac Mini 5 on 24/1/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationMenuIconView: View {
+struct ItemMenuIcon: View {
     @Binding var showLocationSearchView : Bool
     
     var body: some View {
@@ -30,8 +30,9 @@ struct NavigationMenuIconView: View {
     }
 }
 
-struct NavigationMenuIconView_Previews: PreviewProvider {
+struct ItemMenuIcon_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationMenuIconView(showLocationSearchView: .constant(true))
+        ItemMenuIcon(showLocationSearchView: .constant(true))
     }
 }
+

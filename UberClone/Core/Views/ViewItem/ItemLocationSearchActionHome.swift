@@ -1,5 +1,5 @@
 //
-//  LocationSearchView.swift
+//  ItemLocationSearchActionHome.swift
 //  UberClone
 //
 //  Created by Mac Mini 5 on 24/1/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationSearchActionView: View {
+struct ItemLocationSearchActionHome: View {
     var body: some View {
         HStack{
             Rectangle()
@@ -33,8 +33,9 @@ struct LocationSearchActionView: View {
     }
 }
 
-struct LocationSearchActionView_Previews: PreviewProvider {
+struct ItemLocationSearchActionHome_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchActionView()
+        ItemLocationSearchActionHome()
     }
 }
+

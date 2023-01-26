@@ -1,13 +1,13 @@
 //
-//  LocationSearchResult.swift
+//  ItemLocationSearch.swift
 //  UberClone
 //
-//  Created by Mac Mini 5 on 24/1/23.
+//  Created by Mac Mini 5 on 26/1/23.
 //
 
 import SwiftUI
 
-struct LocationSearchResultView: View {
+struct ItemLocationSearch: View{
     let title: String
     let subTitle: String
     
@@ -36,8 +36,9 @@ struct LocationSearchResultView: View {
     }
 }
 
-struct LocationSearchResultView_Previews: PreviewProvider {
+struct ItemLocationSearch_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchResultView(title: "City", subTitle: "Address")
+        ItemLocationSearch(title: "City", subTitle: "Address")
     }
 }
+
