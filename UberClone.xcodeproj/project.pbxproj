@@ -17,6 +17,7 @@
 		4A6512A7297F4D91007B856C /* NavigationMenuIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6512A6297F4D91007B856C /* NavigationMenuIconView.swift */; };
 		4A6512A9297F57E5007B856C /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6512A8297F57E5007B856C /* LocationSearchView.swift */; };
 		4A6512AB297F6C96007B856C /* LocationSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6512AA297F6C96007B856C /* LocationSearchResultView.swift */; };
+		4AF4F85E297FB47D00FC583D /* LocationSearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF4F85D297FB47D00FC583D /* LocationSearchVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4A6512A6297F4D91007B856C /* NavigationMenuIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuIconView.swift; sourceTree = "<group>"; };
 		4A6512A8297F57E5007B856C /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		4A6512AA297F6C96007B856C /* LocationSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultView.swift; sourceTree = "<group>"; };
+		4AF4F85D297FB47D00FC583D /* LocationSearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		4A65129B297F1E46007B856C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4AF4F85D297FB47D00FC583D /* LocationSearchVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				4A651289297F1DC1007B856C /* UberCloneApp.swift in Sources */,
 				4A6512A0297F1EE1007B856C /* UberMapViewRepresentable.swift in Sources */,
 				4A65129E297F1E76007B856C /* HomeView.swift in Sources */,
+				4AF4F85E297FB47D00FC583D /* LocationSearchVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
