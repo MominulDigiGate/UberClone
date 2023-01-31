@@ -12,6 +12,7 @@ struct UberMapViewRepresentable: UIViewRepresentable
 {
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @Binding var mapState : MapViewState
     @EnvironmentObject var vmLocationSearch : VmLocationSearch
     
     func makeUIView(context: Context) -> some UIView {
@@ -23,6 +24,7 @@ struct UberMapViewRepresentable: UIViewRepresentable
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        print("DEBUG: mapState is \(mapState)")
         if let coordinate = vmLocationSearch.selectedLocationCoordinate{
             print("DEBUG: Selected location coordinate \(coordinate)")
             
@@ -44,6 +46,7 @@ extension UberMapViewRepresentable
         //MARK:- Properties
         let parent : UberMapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
+        var currentLocation: MKCoordinateRegion?
         
         init(parent: UberMapViewRepresentable) {
             self.parent = parent
@@ -107,5 +110,12 @@ extension UberMapViewRepresentable
                 completion(route)
             }
         }
+        
+        
+        func clearMapView(){
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
+        }
+        
     }
 }
