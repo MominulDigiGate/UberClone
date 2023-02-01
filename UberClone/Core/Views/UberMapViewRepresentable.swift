@@ -25,11 +25,25 @@ struct UberMapViewRepresentable: UIViewRepresentable
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
         print("DEBUG: mapState is \(mapState)")
-        if let coordinate = vmLocationSearch.selectedLocationCoordinate{
-            print("DEBUG: Selected location coordinate \(coordinate)")
+        
+        switch mapState {
+        case .noInput:
+            context.coordinator.clearMapViewAndRecenterUserLocation()
+            break
             
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-            context.coordinator.configPolyline(withDestinationCoordinate: coordinate)
+        case .searchingForLocation:
+            
+            break
+            
+        case .locationSelected:
+            if let coordinate = vmLocationSearch.selectedLocationCoordinate{
+//                print("DEBUG: Selected location coordinate \(coordinate)")
+                
+                context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
+                context.coordinator.configPolyline(withDestinationCoordinate: coordinate)
+            }
+            break
+            
         }
     }
     
@@ -46,7 +60,7 @@ extension UberMapViewRepresentable
         //MARK:- Properties
         let parent : UberMapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
-        var currentLocation: MKCoordinateRegion?
+        var currentRegion: MKCoordinateRegion?
         
         init(parent: UberMapViewRepresentable) {
             self.parent = parent
@@ -59,6 +73,7 @@ extension UberMapViewRepresentable
             
             let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:  userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             
+            self.currentRegion = region
             parent.mapView.setRegion(region, animated: true)
         }
         
@@ -112,9 +127,12 @@ extension UberMapViewRepresentable
         }
         
         
-        func clearMapView(){
+        func clearMapViewAndRecenterUserLocation(){
             parent.mapView.removeAnnotations(parent.mapView.annotations)
             parent.mapView.removeOverlays(parent.mapView.overlays)
+            if let currentRegion = currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
+            }
         }
         
     }

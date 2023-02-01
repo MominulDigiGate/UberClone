@@ -28,17 +28,16 @@ struct ItemMenuIcon: View {
     }
     
     func actionForState(_ state : MapViewState){
-        switch state{
+        switch state {
         case .noInput:
             print("DEBUG: No input.")
             
-        case .searchingForLocation: do {
-            print("DEBUG: searchingForLocation.")
+        case .searchingForLocation:
             mapState = .noInput
-        }
             
         case .locationSelected:
-            print("DEBUG: Clear map view.")
+            mapState = .noInput
+            
         }
     }
     

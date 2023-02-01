@@ -42,7 +42,7 @@ class VmLocationSearch: NSObject, ObservableObject{
             let coordinate = item.placemark.coordinate
             self.selectedLocationCoordinate = coordinate
             
-            print("DEBUG: Location coordinates \(coordinate)")
+//            print("DEBUG: Location coordinates \(coordinate)")
         }
     }
     
